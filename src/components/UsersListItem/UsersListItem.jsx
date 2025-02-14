@@ -1,16 +1,15 @@
 import React from 'react'
+import styles from "./UsersListItem.module.css"
+import { Link } from 'react-router-dom'
 
 function UserListItem(props) {
-    console.log(props);
     
     return (
-        <div key={props.id}>
-            <h4>
-                {props.title}
-            </h4>
+        <div className={styles.wrapper}>
+            <Link to={`/user/${props.id}`}>{props.name}</Link>
             <ul>
-                <li>{props.id}</li>
-                <li>{props.completed}</li>
+                <li>{props.email}</li>
+                <li>{props.phone}</li>
             </ul>
         </div>
     )
